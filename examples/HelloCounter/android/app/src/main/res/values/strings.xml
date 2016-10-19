@@ -1,0 +1,3 @@
+<resources>
+    <string name="app_name">HelloCounter</string>
+</resources>

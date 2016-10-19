@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			section img.black {
+				border: solid 16px #000; background-color: #000;
+			}
+			.opaque-background { background-color: rgba(0,0,0,0.5);  }
+			.bright { color: yellow !important; opacity: 1 !important;}
+			.bright2 { color: #66f !important; opacity: 1 !important;}
+			.opaque { background-color: rgba(0,0,0,0.5); }
+			ul.opaque { background-color: rgba(0,0,0,0.5); padding: 16px 16px 16px 48px;}
+			.inlinecode {font-family: "Courier New" !important;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>React-Native</h1>
+					<h3>Tours.JS #1</h3>
+					<p>
+						<small><a href="http://twitter.com/nogunner">Rodrigo Reyes</a></small>
+					</p>
+				</section>
+
+				<Section>
+					<section>
+						<h2>Contexte</h2>
+					</section>
+
+					<section>
+						<h2>Développer sur mobile</h2>
+						<img src="img/schema-ecosystem.svg" class="black">
+					</section>
+
+					<section>
+						<h4>À quoi répond React Native</h4>
+						<ul>
+							<li>Utiliser ses <span class="bright">compétences JS/Web</span> pour faire du mobile</li>
+							<li>Applications avec un <span class="bright">look&feel natif</span></li>
+							<li><span class="bright">Factoriser</span> le code source entre plateformes</li>
+							<li>Conserver les bénéfices de <span class="bright">l'écosystème JS</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Points notables</h2>
+						<ul>
+							<li>Basé sur React</li>
+							<li>Javascript moderne</li>
+							<li>Open Source</li>
+							<li>Beaucoup de plateformes cibles</li>
+						</ul>
+					</section>
+
+					<section>
+						<img class="black" src="img/schema-targets.svg"/>
+					</section>
+
+					<section>
+						<h2>ShowCase</h2>
+						<p>
+							<a href="https://facebook.github.io/react-native/showcase.html">sur le site de react native</a>
+						</p>
+					</section>
+				</Section>
+
+
+				<section>
+					<section>
+						<h2>À quoi ça ressemble</h2>
+					</section>
+
+					<section>
+						<img class="white" src="img/hello-counter.png">
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Comment on démarre ?</h2>
+					</section>
+					<section>
+						<h2>Démarrage (1/2)</h2>
+						<ul>
+							<li>Acheter un PC</li>
+							<li>Apprendre un peu Javascript</li>
+							<li>Installer NodeJS 4+</li>
+							<li>Installer un kit de dev Android ou IOS</li>
+							<li class="inlinecode">npm install -g react-native-cli</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Démarrage (2/2)</h2>
+						<h4>Créer et lancer un projet</h4>
+						<ul>
+							<li>react-native init HelloWorld</li>
+							<li>cd HelloWorld</li>
+							<li>react-native run-android / run-ios</li>
+						</ul>
+						<p>&rarr; ça tourne</p>
+					</section>
+
+					<section>
+						<h2>react-native init</h2>
+						<img class="black" src="./img/sample-project.png">
+					</section>
+
+					<section>
+						<h2>Workflow</h2>
+						<img class="black" src="./img/schema-packager.svg">
+					</section>
+
+
+					<section>
+						<h2>Démo</h2>
+					</section>
+
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Architecture</h2>
+					</section>
+					<section>
+						<h2>Comparaison</h2>
+						<img class="black" src="img/schema-react-react-native.svg">
+					</section>
+					<section>
+						<h2>Javascript</h2>
+						<ul>
+							<li>Javascript Core (webkit) en production</li>
+							<li>V8 dans Chrome (debug)</li>
+							<li> &rarr; +4Mo sur Android</li>
+							<li>Pas de JIT sur IOS</li>
+						</ul>
+
+					</section>
+					<section>
+						<h2>Threading</h2>
+						<img class="black" src="img/schema-threading.svg">
+					</section>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Petit plongeon</h2>
+					</section>
+
+					<section>
+						<h2>Depuis le web</h2>
+						<ul>
+							<li>&lt;div&gt; &rarr; <span class="bright">&lt;View&gt;</span></li>
+							<li>&lt;div&gt; et  &lt;span&gt; &rarr; <span class="bright">&lt;Text&gt;</span></li>
+							<li>&lt;div onclick=''&gt; &rarr; <span class="bright">&lt;Touchable*&gt;</span></li>
+							<li> css &rarr; React Stylesheet JS</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Composant IHM</h2>
+						<img  class="black" src="img/schema-components.svg">
+					</section>
+
+					<section>
+						<h2>API</h2>
+						<img  class="black" src="img/schema-api.svg">
+					</section>
+
+					<section>
+						<h2>Layout</h2>
+						<ul>
+							<li>Arborescence de View et de composants</li>
+							<li>Modèle Flexbox
+								<ul>
+									<li>standardisé</li>
+									<li>Déclaratif</li>
+									<li>Alignement h/v, wrapping, grow, shrink, etc </li>
+								</ul>
+							</li>
+
+							<li>API d'animation</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Flexbox</h2>
+						<img src="img/flex-align.svg" class="black">
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Environnement</h2>
+					</section>
+					<section>
+						<h2>CLI</h2>
+						<ul>
+							<li class="inlinecode">react-native</li>
+							<li>Dev: react-native start / run-android / run-ios</li>
+							<li>Prod: suivant les plateforme</li>
+							<li>uniquement du CLI, pas très toolable</li>
+							<li>Basé sur NPM</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Confort</h2>
+						<ul>
+							<li>babel/webpack</li>
+							<li>Chrome dev console</li>
+							<li>Mode watch</li>
+							<li>Live Reload / Hot Reload</li>
+							<li>Perf monitor</li>
+							<li>USB ou Wifi</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Fin</h2>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Fin Alternative</h2>
+					</section>
+
+					<section>
+						<h2>Navigation</h2>
+					</section>
+					<section>
+						<h2>Accès réseaux</h2>
+					</section>
+					<section>
+						<h2>Storage</h2>
+					</section>
+					<section>
+						<h2>Animations</h2>
+						<ul>
+							<li>API 2D dédiée</li>
+							<li>chainage, easing, interpolation</li>
+							<li>Native pour le layout</li>
+							<li>Animated rend un composant animable</li>
+							<li>Animated.View Animated.Text Animated.Image</li>
+						</ul>
+					</section>
+					<section>
+						<h2>WebView</h2>
+					</section>
+					<section>
+						<h2>Canvas, OpenGL</h2>
+					</section>
+				</section>
+
+				<section>
+					<section
+						<h2>Ecosystème</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
